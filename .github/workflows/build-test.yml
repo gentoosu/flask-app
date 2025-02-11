@@ -24,7 +24,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ PYTHON_VERSION }}
+          python-version: $PYTHON_VERSION
 
       - name: Install Dependencies
         run: pip install flake8
@@ -42,7 +42,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ PYTHON_VERSION }}
+          python-version: $PYTHON_VERSION
 
       - name: Install Dependencies
         run: |
