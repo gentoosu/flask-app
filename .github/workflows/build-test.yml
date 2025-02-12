@@ -73,7 +73,7 @@ jobs:
         run: |
           YEAR=$(date +'%Y')
           MONTH=$(date +'%m')
-
+          echo $SHELL
           # Fetch the latest tag that matches YYYY.MM.*
           # LATEST_TAG=$(git tag --sort=-v:refname | grep -E "^${YEAR}\.${MONTH}\.[0-9]+$" | head -n 1 || echo "")
           LATEST_TAG=$(git tag --sort=-v:refname | grep -E "^${YEAR}\.${MONTH}\.\d+" | head -n 1 || echo "")
