@@ -35,5 +35,5 @@ USER python
 #Expose Flask port
 EXPOSE 5000
 
-# gunicorn command to run the application with 2 workers
+#gunicorn command to run the application with 2 workers
 CMD ["gunicorn", "app:app", "-b", "0.0.0.0:5000", "-w", "2"]
