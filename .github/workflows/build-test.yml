@@ -75,7 +75,8 @@ jobs:
           MONTH=$(date +'%m')
 
           # Fetch the latest tag that matches YYYY.MM.*
-          LATEST_TAG=$(git tag --sort=-v:refname | grep -E "^$YEAR\.$MONTH\.[0-9]+$" | head -n 1 || echo "")
+          # LATEST_TAG=$(git tag --sort=-v:refname | grep -E "^${YEAR}\.${MONTH}\.[0-9]+$" | head -n 1 || echo "")
+          LATEST_TAG=$(git tag --sort=-v:refname | grep -E "^${YEAR}\.${MONTH}\.\d+" | head -n 1 || echo "")
           echo "Latest tag: $LATEST_TAG"
           if [[ -z "$LATEST_TAG" ]]; then
             NEW_VERSION="$YEAR.$MONTH.1"
